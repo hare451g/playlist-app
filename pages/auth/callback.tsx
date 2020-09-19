@@ -1,5 +1,5 @@
-import Callback from '../../feature/auth/Callback';
+import AuthCallback from '../../feature/AuthCallback';
 
-const CallbackPage = () => <Callback />;
+const CallbackPage = () => <AuthCallback />;
 
 export default CallbackPage;

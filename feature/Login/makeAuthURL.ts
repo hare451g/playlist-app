@@ -6,6 +6,13 @@ function makeAuthURL(): string | null {
       client_id: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
       redirect_uri: process.env.NEXT_PUBLIC_CALLBACK_URL,
       response_type: 'token',
+      scope: [
+        'user-read-private',
+        'user-read-email',
+        'user-top-read',
+        'playlist-read-private',
+        'playlist-read-collaborative',
+      ],
     };
 
     const composedParams = Object.keys(params)

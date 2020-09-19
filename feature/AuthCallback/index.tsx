@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import Credential from '../../types/Credential';
+import { useEffect } from 'react';
 import parseCredentials from './parseCredential';
 import saveCredentials from './saveCredentials';
 
-function Callback() {
+function AuthCallback() {
   const router = useRouter();
 
   useEffect(() => {
@@ -35,4 +34,4 @@ function Callback() {
   );
 }
 
-export default Callback;
+export default AuthCallback;

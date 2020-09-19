@@ -1,5 +1,5 @@
-import Login from '../../feature/auth/Login';
-import makeAuthURL from '../../feature/auth/makeAuthURL';
+import Login from '../../feature/Login';
+import makeAuthURL from '../../feature/Login/makeAuthURL';
 
 type PropsType = {
   authURL: string | null;
