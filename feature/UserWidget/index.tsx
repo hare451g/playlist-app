@@ -4,7 +4,7 @@ import useRequest from '../../utils/useRequest';
 import User from '../../types/User';
 
 function UserWidget() {
-  const { data, isLoading, error, get } = useRequest();
+  const { data, isLoading, progress, error, get } = useRequest();
 
   useEffect(() => {
     get('/me');
@@ -15,7 +15,7 @@ function UserWidget() {
   }
 
   if (isLoading) {
-    return <div>Fetching user data ... </div>;
+    return <div>Fetching user data ... {progress}%</div>;
   }
 
   if (data) {
