@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import useRequest from '../../utils/useRequest';
 import User from '../../types/User';
+import UserCard from './components/UserCard';
 
 function UserWidget() {
   const { data, isLoading, progress, error, get } = useRequest();
@@ -19,16 +20,10 @@ function UserWidget() {
   }
 
   if (data) {
-    const { images, id, display_name }: User = data;
-    const avatar = images && images.length > 0 && images[0];
+    const { images, display_name, product }: User = data;
+    const avatar = images && images.length > 0 && images[0].url;
     return (
-      <div>
-        <img src={avatar.url} />
-        <ul>
-          <li>{id}</li>
-          <li>{display_name}</li>
-        </ul>
-      </div>
+      <UserCard avatar={avatar} displayName={display_name} product={product} />
     );
   }
 

@@ -1,0 +1,33 @@
+.container {
+  height: 256px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4px 2px;
+
+  border-radius: 8px;
+  border: 1px solid gainsboro;
+}
+
+.loading {
+  background-color: gainsboro;
+}
+
+.displayName {
+  font-size: 18px;
+  text-align: center;
+  color: #3f3f3f;
+  margin: 8px;
+  margin-top: 16px;
+}
+
+.premiumProduct {
+  font-size: 16px;
+  color: goldenrod;
+  margin: 4px;
+  padding: 4px;
+  border: 1px solid goldenrod;
+}

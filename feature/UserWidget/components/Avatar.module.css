@@ -1,0 +1,21 @@
+.avatar {
+  object-fit: none;
+  object-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.sm {
+  height: 100px;
+  width: 100px;
+}
+
+.md {
+  height: 128px;
+  width: 128px;
+}
+
+.lg {
+  height: 240px;
+  width: 240px;
+}
