@@ -1,12 +1,17 @@
 import { useEffect } from 'react';
 
 import PlaylistType from '../../../types/Playlist';
+import PlaylistItem from '../../../types/PlaylistItem';
 import useRequest from '../../../utils/useRequest';
 
 import style from './Deck.module.css';
 import Playlist from './Playlist';
 
-const Deck: React.FC = () => {
+type PropTypes = {
+  onPlaylistClick: (id: PlaylistItem['id']) => void;
+};
+
+const Deck: React.FC<PropTypes> = ({ onPlaylistClick }) => {
   const {
     data: playlistsData,
     isLoading: isPlaylistLoading,
@@ -37,7 +42,12 @@ const Deck: React.FC = () => {
     return (
       <div className={style.container}>
         {playlists.items.map((item) => (
-          <Playlist id={item.id} image={item.images[0].url} name={item.name} />
+          <Playlist
+            id={item.id}
+            image={item.images[0].url}
+            name={item.name}
+            onPlaylistClick={onPlaylistClick}
+          />
         ))}
       </div>
     );

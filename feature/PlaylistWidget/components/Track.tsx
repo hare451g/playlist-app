@@ -18,7 +18,7 @@ const Track: React.FC<PropTypes> = ({ artists, duration, images, name }) => {
 
   return (
     <div className={style.container}>
-      <img src={albumArt.url} />
+      <img src={albumArt ? albumArt.url : ''} />
       <div className={style.trackInfo}>
         <div className={style.name}>{name}</div>
         <div className={style.artist}>{composedArtists}</div>

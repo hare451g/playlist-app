@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 
-import TrackType from '../../types/Track';
-import useRequest from '../../utils/useRequest';
+import TrackType from '../../../types/Track';
+import useRequest from '../../../utils/useRequest';
 
-import Track from './components/Track';
+import Track from './Track';
+import style from './Tracks.module.css';
 
 function Tracks({ id }) {
   const {
@@ -15,7 +16,11 @@ function Tracks({ id }) {
 
   useEffect(() => {
     getTracks(`/playlists/${id}/tracks`);
-  }, []);
+  }, [id]);
+
+  if (!id) {
+    return <p>no id</p>;
+  }
 
   if (trackError) {
     return <p>{trackError}</p>;
@@ -31,7 +36,7 @@ function Tracks({ id }) {
     );
 
     return (
-      <div>
+      <div className={style.container}>
         {trackList.map((track) => (
           <Track
             artists={track.artists}

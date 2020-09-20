@@ -1,12 +1,20 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 
-import PlaylistType from '../../types/Playlist';
-import useRequest from '../../utils/useRequest';
-
+import Tracks from './components/Tracks';
 import Deck from './components/Deck';
 
 function PlaylistWidget() {
-  return <Deck />;
+  const [selectedId, setSelectedId] = useState(null);
+
+  return (
+    <div>
+      <Deck onPlaylistClick={(id) => setSelectedId(id)} />
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <Tracks id={selectedId} />
+        <Tracks id={selectedId} />
+      </div>
+    </div>
+  );
 }
 
 export default PlaylistWidget;

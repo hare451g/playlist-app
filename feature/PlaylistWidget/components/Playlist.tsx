@@ -10,14 +10,20 @@ type PropTypes = {
   id: PlaylistItem['id'];
   image: Image['url'];
   name: PlaylistItem['name'];
+  onPlaylistClick: (id: PlaylistItem['id']) => void;
 };
 
-const Playlist: React.FC<PropTypes> = ({ id, image, name }) => {
+const Playlist: React.FC<PropTypes> = ({
+  id,
+  image,
+  name,
+  onPlaylistClick,
+}) => {
   return (
-    <div>
+    <button className={style.buttonFrame} onClick={() => onPlaylistClick(id)}>
       <img src={image} className={style.albumArt} />
       <p>{name}</p>
-    </div>
+    </button>
   );
 };
 
