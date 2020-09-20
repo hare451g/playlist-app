@@ -3,7 +3,7 @@ import Artist from './Artist';
 
 export default interface Track {
   album: Album;
-  artist: Artist;
+  artists: [Artist];
   available_markets: [string];
   disc_number: number;
   duration_ms: number;

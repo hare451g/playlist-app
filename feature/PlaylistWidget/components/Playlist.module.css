@@ -1,0 +1,16 @@
+.container {
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-color: darkgray;
+  height: 300px;
+  width: 300px;
+  filter: saturate(0);
+  transition: all 0.5s;
+}
+
+.container:hover {
+  cursor: pointer;
+  filter: saturate(1);
+  transition: all 0.5s;
+}
