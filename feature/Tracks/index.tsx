@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import TrackType from '../../types/Track';
 import useRequest from '../../utils/useRequest';
+
 import Track from './components/Track';
 
 function Tracks({ id }) {
@@ -28,6 +29,7 @@ function Tracks({ id }) {
     const trackList: [TrackType] = trackResponse.items.map(
       ({ track }) => track
     );
+
     return (
       <div>
         {trackList.map((track) => (

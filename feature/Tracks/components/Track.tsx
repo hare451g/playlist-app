@@ -5,13 +5,13 @@ import TrackType from '../../../types/Track';
 import style from './Track.module.css';
 
 type PropTypes = {
-  name: TrackType['name'];
   artists: TrackType['artists'];
   duration: TrackType['duration_ms'];
   images: TrackType['album']['images'];
+  name: TrackType['name'];
 };
 
-const Track: React.FC<PropTypes> = ({ name, artists, duration, images }) => {
+const Track: React.FC<PropTypes> = ({ artists, duration, images, name }) => {
   const composedArtists = artists.map((artist) => artist.name).join(',');
   const formattedDuration = dateFormat(duration, 'mm:ss');
   const albumArt = images.find(({ height }) => height === 64);

@@ -12,7 +12,7 @@ type PropTypes = {
 const Deck: React.FC<PropTypes> = ({ list, total, next, prev }) => (
   <div className={style.container}>
     {list.map((item) => (
-      <Playlist id={item.id} image={item.images[0].url} />
+      <Playlist id={item.id} image={item.images[0].url} name={item.name} />
     ))}
   </div>
 );
