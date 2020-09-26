@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: flex-start;
   overflow-x: scroll;
+  height: 35vh;
 }
 
 .container::-webkit-scrollbar {
