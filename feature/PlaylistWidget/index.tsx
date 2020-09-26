@@ -11,7 +11,6 @@ function PlaylistWidget() {
       <Deck onPlaylistClick={(id) => setSelectedId(id)} />
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Tracks id={selectedId} />
-        <Tracks id={selectedId} />
       </div>
     </div>
   );
