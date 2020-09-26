@@ -1,12 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import TrackType from '../../../types/Track';
 import useRequest from '../../../utils/useRequest';
 
+import Summary from './Summary';
 import Track from './Track';
+import TrackInfo from './TrackInfo';
 import style from './Tracks.module.css';
 
 function Tracks({ id }) {
+  const [trackId, setTrackId] = useState(null);
+
   const {
     data: trackResponse = [],
     isLoading: isTrackLoading,
@@ -35,16 +39,24 @@ function Tracks({ id }) {
       ({ track }) => track
     );
 
+    const ids = trackResponse.items.map(({ track }) => track.id).join(',');
+
     return (
       <div className={style.container}>
+        <Summary ids={ids} />
         {trackList.map((track) => (
-          <Track
-            artists={track.artists}
-            duration={track.duration_ms}
-            name={track.name}
-            images={track.album.images}
-            key={track.id}
-          />
+          <div>
+            <Track
+              id={track.id}
+              artists={track.artists}
+              duration={track.duration_ms}
+              name={track.name}
+              images={track.album.images}
+              key={track.id}
+              onTrackClick={(id) => setTrackId(id)}
+            />
+            {trackId === track.id && <TrackInfo id={trackId} />}
+          </div>
         ))}
       </div>
     );
