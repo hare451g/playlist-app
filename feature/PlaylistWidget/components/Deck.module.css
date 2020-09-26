@@ -5,6 +5,15 @@
   overflow-x: scroll;
 }
 
+.container::-webkit-scrollbar {
+  width: 10px;
+  scrollbar-width: #f1f1f1;
+}
+
+.container::-webkit-scrollbar-track {
+  background: none;
+}
+
 .loadingContainer {
   margin-right: 1px;
 }
